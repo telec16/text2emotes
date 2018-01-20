@@ -7,10 +7,9 @@ def getEmotes(client):
 	if(client == "RocketChat"):
 		reg = "title=\"(:.*?:)\""
 	else:
-		print(client + " not supported !")
-		return None;
+		reg = "(:.*?:)"
 
-	with open('emotes.html', 'r') as fhtml:
+	with open(client+'.html', 'r') as fhtml:
 		html=fhtml.read().replace('\n', '')
 
 	p = re.compile(reg)
